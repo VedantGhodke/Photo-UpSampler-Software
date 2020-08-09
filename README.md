@@ -1,13 +1,5 @@
-# PULSE: Self-Supervised Photo Upsampling via Latent Space Exploration of Generative Models
-Code accompanying CVPR'20 paper of the same title. Paper link: https://arxiv.org/pdf/2003.03808.pdf
+# Photo Up-Sampler Software
 
-## NOTE
-
-We have noticed a lot of concern that PULSE will be used to identify individuals whose faces have been blurred out. We want to emphasize that this is impossible - **PULSE makes imaginary faces of people who do not exist, which should not be confused for real people.** It will **not** help identify or reconstruct the original image.
-
-We also want to address concerns of bias in PULSE. **We have now included a new section in the [paper](https://arxiv.org/pdf/2003.03808.pdf) and an accompanying model card directly addressing this bias.**
-
----
 
 ![Transformation Preview](./readme_resources/014.jpeg)
 ![Transformation Preview](./readme_resources/034.jpeg)
@@ -15,21 +7,22 @@ We also want to address concerns of bias in PULSE. **We have now included a new 
 
 Table of Contents
 =================
-- [PULSE: Self-Supervised Photo Upsampling via Latent Space Exploration of Generative Models](#pulse-self-supervised-photo-upsampling-via-latent-space-exploration-of-generative-models)
+- [Photo Up-Sampler Software](#self-supervised-photo-upsampling-via-latent-space-exploration-of-generative-models)
 - [Table of Contents](#table-of-contents)
   - [What does it do?](#what-does-it-do)
   - [Usage](#usage)
-    - [Prereqs](#prereqs)
+    - [Prerequisites](#prereqs)
     - [Data](#data)
-    - [Applying PULSE](#applying-pulse)
+    - [Application](#applying-pulse)
+    
 ## What does it do? 
-Given a low-resolution input image, PULSE searches the outputs of a generative model (here, [StyleGAN](https://github.com/NVlabs/stylegan)) for high-resolution images that are perceptually realistic and downscale correctly.
+Given a low-resolution input image, this software searches the outputs of a generative model for high-resolution images that are perceptually realistic and downscale correctly.
 
 ![Transformation Preview](./readme_resources/transformation.gif)
 
 ## Usage
 
-The main file of interest for applying PULSE is `run.py`. A full list of arguments with descriptions can be found in that file; here we describe those relevant to getting started.
+The main file of interest for applying this software is `run.py`. A full list of arguments with descriptions can be found in that file; here we describe those relevant to getting started.
 
 ### Prereqs
 
@@ -66,9 +59,9 @@ By default, input data for `run.py` should be placed in `./input/` (though this 
 
 Note that if your data begins at a low resolution already, downscaling it further will retain very little information. In this case, you may wish to bicubically upsample (usually, to 1024x1024) and allow `align_face.py` to downscale for you.  
 
-### Applying PULSE
+### Application
 Once your data is appropriately formatted, all you need to do is
 ```
 python run.py
 ```
-Enjoy!
+
